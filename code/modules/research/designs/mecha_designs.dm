@@ -137,7 +137,10 @@
 /////////// Mecha Equpment /////////////
 ////////////////////////////////////////
 
-/datum/design/mech_scattershot
+/datum/design/mech
+	var/is_restricted_weapon = FALSE // If this should be added to mechfab on emag
+
+/datum/design/mech/mech_scattershot
 	name = "Exosuit Weapon (LBX AC 10 \"Scattershot\")"
 	desc = "Allows for the construction of LBX AC 10."
 	id = "mech_scattershot"
@@ -147,9 +150,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-
-/datum/design/mech_carbine
+/datum/design/mech/mech_carbine
 	name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
 	desc = "Allows for the construction of FNX-99 \"Hades\" Carbine."
 	id = "mech_carbine"
@@ -159,8 +162,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_ion
+/datum/design/mech/mech_ion
 	name = "Exosuit Weapon (MKIV Ion Heavy Cannon)"
 	desc = "Allows for the construction of MKIV Ion Heavy Cannon."
 	id = "mech_ion"
@@ -170,8 +174,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_tesla
+/datum/design/mech/mech_tesla
 	name = "Exosuit Weapon (MKI Tesla Cannon)"
 	desc = "Allows for the construction of MKI Tesla Cannon."
 	id = "mech_tesla"
@@ -181,8 +186,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_laser
+/datum/design/mech/mech_laser
 	name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
 	desc = "Allows for the construction of CH-PS Laser."
 	id = "mech_laser"
@@ -192,8 +198,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_laser_heavy
+/datum/design/mech/mech_laser_heavy
 	name = "Exosuit Weapon (CH-LC \"Solaris\" Laser Cannon)"
 	desc = "Allows for the construction of CH-LC Laser Cannon."
 	id = "mech_laser_heavy"
@@ -203,8 +210,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_disabler
+/datum/design/mech/mech_disabler
 	name = "Exosuit Weapon (CH-DS \"Peacemaker\" Disabler)"
 	desc = "Allows for the construction of CH-DS Disabler."
 	id = "mech_disabler"
@@ -214,7 +222,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_grenade_launcher
+/datum/design/mech/mech_grenade_launcher
 	name = "Exosuit Weapon (SGL-6 Grenade Launcher)"
 	desc = "Allows for the construction of SGL-6 Grenade Launcher."
 	id = "mech_grenade_launcher"
@@ -224,7 +232,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/clusterbang_launcher
+/datum/design/mech/clusterbang_launcher
 	name = "Exosuit Module (SOB-3 Clusterbang Launcher)"
 	desc = "A weapon that violates the Geneva Convention at 3 rounds per minute"
 	id = "clusterbang_launcher"
@@ -234,8 +242,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_wormhole_gen
+/datum/design/mech/mech_wormhole_gen
 	name = "Exosuit Module (Localized Wormhole Generator)"
 	desc = "An exosuit module that allows generating of small quasi-stable wormholes."
 	id = "mech_wormhole_gen"
@@ -245,7 +254,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_teleporter
+/datum/design/mech/mech_teleporter
 	name = "Exosuit Module (Teleporter Module)"
 	desc = "An exosuit module that allows exosuits to teleport to any position in view."
 	id = "mech_teleporter"
@@ -255,7 +264,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_rcd
+/datum/design/mech/mech_rcd
 	name = "Exosuit Module (RCD Module)"
 	desc = "An exosuit-mounted Rapid Construction Device."
 	id = "mech_rcd"
@@ -265,7 +274,7 @@
 	construction_time = 1200
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_thrusters
+/datum/design/mech/mech_thrusters
 	name = "Exosuit Module (RCS Thruster Package)"
 	desc = "A thruster package for exosuits. Expells gas from the internal life-support air tank to generate thrust."
 	id = "mech_thrusters"
@@ -275,7 +284,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_gravcatapult
+/datum/design/mech/mech_gravcatapult
 	name = "Exosuit Module (Gravitational Catapult Module)"
 	desc = "An exosuit mounted Gravitational Catapult."
 	id = "mech_gravcatapult"
@@ -285,7 +294,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_repair_droid
+/datum/design/mech/mech_repair_droid
 	name = "Exosuit Module (Repair Droid Module)"
 	desc = "Automated Repair Droid. BEEP BOOP"
 	id = "mech_repair_droid"
@@ -295,7 +304,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_energy_relay
+/datum/design/mech/mech_energy_relay
 	name = "Exosuit Module (Tesla Energy Relay)"
 	desc = "Tesla Energy Relay"
 	id = "mech_energy_relay"
@@ -305,7 +314,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_ccw_armor
+/datum/design/mech/mech_ccw_armor
 	name = "Exosuit Module (Reactive Armor Booster Module)"
 	desc = "Exosuit-mounted armor booster."
 	id = "mech_ccw_armor"
@@ -315,7 +324,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_proj_armor
+/datum/design/mech/mech_proj_armor
 	name = "Exosuit Module (Reflective Armor Booster Module)"
 	desc = "Exosuit-mounted armor booster."
 	id = "mech_proj_armor"
@@ -325,7 +334,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_diamond_drill
+/datum/design/mech/mech_diamond_drill
 	name = "Exosuit Module (Diamond Mining Drill)"
 	desc = "An upgraded version of the standard drill."
 	id = "mech_diamond_drill"
@@ -335,7 +344,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_generator_nuclear
+/datum/design/mech/mech_generator_nuclear
 	name = "Exosuit Module (ExoNuclear Reactor)"
 	desc = "Compact nuclear reactor module."
 	id = "mech_generator_nuclear"
@@ -345,7 +354,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_plasma_cutter
+/datum/design/mech/mech_plasma_cutter
 	name = "Exosuit Module Design (217-D Heavy Plasma Cutter)"
 	desc = "A device that shoots resonant plasma bursts at extreme velocity. The blasts are capable of crushing rock and demolishing solid obstacles."
 	id = "mech_plasma_cutter"
@@ -355,7 +364,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_lmg
+/datum/design/mech/mech_lmg
 	name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
 	id = "mech_lmg"
@@ -365,8 +374,9 @@
 	construction_time = 100
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	is_restricted_weapon = TRUE
 
-/datum/design/mech_sleeper
+/datum/design/mech/mech_sleeper
 	name = "Exosuit Medical Equipment (Mounted Sleeper)"
 	desc = "Equipment for medical exosuits. A mounted sleeper that stabilizes patients and can inject reagents in the exosuit's reserves."
 	id = "mech_sleeper"
@@ -376,7 +386,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_syringe_gun
+/datum/design/mech/mech_syringe_gun
 	name = "Exosuit Medical Equipment (Syringe Gun)"
 	desc = "Equipment for medical exosuits. A chem synthesizer with syringe gun. Reagents inside are held in stasis, so no reactions will occur."
 	id = "mech_syringe_gun"
@@ -386,7 +396,7 @@
 	construction_time = 200
 	category = list("Exosuit Equipment")
 
-/datum/design/mech_medical_beamgun
+/datum/design/mech/mech_medical_beamgun
 	name = "Exosuit Medical Equipment (Medical Beamgun)"
 	desc = "Equipment for medical exosuits. A mounted medical nanite projector which will treat patients with a focused beam."
 	id = "mech_medi_beam"

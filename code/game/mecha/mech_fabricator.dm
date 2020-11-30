@@ -35,6 +35,7 @@
 								"IPC Components",
 								"Misc"
 								)
+	var/safety = TRUE // When false, should build mech weapons
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	stored_research = new
@@ -76,6 +77,9 @@
 	sleep(10)
 	say("Attempting auto-repair...")
 	sleep(15)
+	say("Nanotrasen config failed to load, entering safe mode...")
+	safety = FALSE
+	sleep(15)
 	say("User DB corrupted \[Code 0x00FA\]. Truncating data structure...")
 	sleep(30)
 	say("User DB truncated. Please contact your Nanotrasen system operator for future assistance.")
@@ -91,6 +95,14 @@
 			if(check_resources(D))
 				output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
 			output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a>\]\[<a href='?src=[REF(src)];part_desc=[D.id]'>?</a>\]</div>"
+		else if(safety == FALSE && istype(D, /datum/design/mech))
+			var/datum/design/mech/M = D
+			if(M.is_restricted_weapon == TRUE)
+				M.category = list("Exosuit Equipment")
+				output += "<div class='part'>[output_part_info(M)]<br>\["
+				if(check_resources(M))
+					output += "<a href='?src=[REF(src)];part=[M.id]'>Build</a> | "
+				output += "<a href='?src=[REF(src)];add_to_queue=[M.id]'>Add to queue</a>\]\[<a href='?src=[REF(src)];part_desc=[M.id]'>?</a>\]</div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_part_info(datum/design/D)
@@ -187,6 +199,11 @@
 			if(D.build_type & MECHFAB)
 				if(set_name in D.category)
 					add_to_queue(D)
+			else if (safety == FALSE && istype(D, /datum/design/mech))
+				var/datum/design/mech/M = D
+				if(M.is_restricted_weapon == TRUE)
+					M.category = list("Exosuit Equipment")
+					add_to_queue(M)
 
 /obj/machinery/mecha_part_fabricator/proc/add_to_queue(D)
 	if(!istype(queue))
