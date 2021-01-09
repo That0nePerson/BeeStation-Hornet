@@ -309,21 +309,27 @@ Key procs
 	spoken_languages = list(/datum/language/sylvan = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
-/datum/language_holder/synthetic
+/datum/language_holder/synthetic // Should have all languages from playable races
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/uncommon = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM),
 								/datum/language/draconic = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),
 								/datum/language/calcic = list(LANGUAGE_ATOM),
-								/datum/language/voltaic = list(LANGUAGE_ATOM))
+								/datum/language/voltaic = list(LANGUAGE_ATOM),
+								/datum/language/apidite = list(LANGUAGE_ATOM),
+								/datum/language/buzzwords = list(LANGUAGE_ATOM),
+								/datum/language/rlyehian = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/uncommon = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM),
 							/datum/language/draconic = list(LANGUAGE_ATOM),
 							/datum/language/moffic = list(LANGUAGE_ATOM),
 							/datum/language/calcic = list(LANGUAGE_ATOM),
-							/datum/language/voltaic = list(LANGUAGE_ATOM))
+							/datum/language/voltaic = list(LANGUAGE_ATOM),
+							/datum/language/apidite = list(LANGUAGE_ATOM),
+							/datum/language/buzzwords = list(LANGUAGE_ATOM),
+							/datum/language/rlyehian = list(LANGUAGE_ATOM))
 
 /datum/language_holder/moth
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
